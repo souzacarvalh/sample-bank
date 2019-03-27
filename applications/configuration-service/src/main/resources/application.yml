@@ -1,0 +1,33 @@
+server:
+  port: 9092
+management:
+  context-path: /admin
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    health:
+      sensitive: false
+
+spring:
+  profiles:
+    include: native
+  application:
+    name: configuration-service
+  cloud:
+    config:
+      name: configuration-service
+      server:
+        defaultLabel: default
+        native:
+          search-locations: classpath:/config/${environment}, classpath:/config/${environment}/{application}
+    jmx:
+      enabled: false
+
+## Service Registry
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:9090/eureka}

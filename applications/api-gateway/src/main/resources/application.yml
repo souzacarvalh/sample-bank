@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: api-gateway
+
+server:
+  port: 9091
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:9090/eureka}
+
+zuul:
+  routes:
+    account:
+      serviceId: account_service
+    credit:
+      serviceId: credit_service
+
+logging.level:
+  root: DEBUG

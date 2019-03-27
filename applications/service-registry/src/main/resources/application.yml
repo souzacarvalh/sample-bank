@@ -1,0 +1,9 @@
+server:
+  port: 9090
+
+eureka:
+  server:
+    enableSelfPreservation: false
+  client:
+    registerWithEureka: false
+    fetchRegistry: false

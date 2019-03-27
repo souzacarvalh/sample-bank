@@ -1,0 +1,14 @@
+apply from: '../../java.gradle'
+
+group 'org.ffsc.samplebank'
+version '3.0.0-SNAPSHOT'
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile "org.springframework.boot:spring-boot-starter-data-rest:$springBootVersion"
+    compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
+    compile("org.hibernate:hibernate-core:${hibernateVersion}")
+    compile project(":components:commons")
+    compile project(":components:account-client")
+    compile project(":components:credit-client")
+}

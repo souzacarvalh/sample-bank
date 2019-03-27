@@ -1,0 +1,21 @@
+group 'org.ffsc.samplebank'
+version '3.0.0-SNAPSHOT'
+
+buildscript {
+    ext {
+        springBootVersion = '1.5.19.RELEASE'
+        springSecurityVersion = '4.2.11.RELEASE'
+        hibernateVersion = "5.4.1.Final"
+        lombokVersion = '1.18.6'
+        slf4jVersion = '1.7.21'
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+       classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.19.RELEASE'
+    }
+}

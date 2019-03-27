@@ -1,0 +1,15 @@
+apply from: '../../service.gradle'
+
+group 'org.ffsc.samplebank'
+version '3.0.0-SNAPSHOT'
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-security'
+    compile project(":components:account")
+    compile project(":components:credit-client")
+}
+
+bootRun {
+    systemProperties['environment'] = 'local'
+    systemProperties['server.port'] = '8080'
+}

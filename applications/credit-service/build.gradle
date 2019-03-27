@@ -1,0 +1,13 @@
+apply from: '../../service.gradle'
+
+group 'org.ffsc.samplebank'
+version '3.0.0-SNAPSHOT'
+
+dependencies {
+    compile project(":components:credit")
+}
+
+bootRun {
+    systemProperties['environment'] = 'local'
+    systemProperties['server.port'] = '8081'
+}

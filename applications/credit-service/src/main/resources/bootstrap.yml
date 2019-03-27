@@ -1,0 +1,26 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: credit-service
+  profiles:
+    active: local
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        serviceId: configuration-service
+        enabled: true
+      retry:
+        max-attempts: 30
+
+management:
+  security:
+    enabled: false
+
+# Define the Eureka server that handles service registration
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9090/eureka/
